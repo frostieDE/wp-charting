@@ -1,0 +1,18 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:WPCharting.Controls">
+    
+    <Style TargetType="local:PieChart">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:PieChart">
+                    <StackPanel>
+                        <Grid x:Name="PART_Grid" VerticalAlignment="Top" />
+                        <ItemsControl Visibility="{TemplateBinding LegendVisible}" ItemTemplate="{TemplateBinding LegendItemTemplate}" x:Name="PART_Legend" />
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

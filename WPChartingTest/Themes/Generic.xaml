@@ -1,0 +1,14 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style TargetType="TextBlock" x:Key="PivotHeader">
+        <Setter Property="FontFamily" Value="{StaticResource PhoneFontFamilySemiBold}" />
+        <Setter Property="FontSize" Value="{StaticResource PhoneFontSizeMedium}" />
+    </Style>
+
+    <Style x:Key="NormalText" TargetType="TextBlock" BasedOn="{StaticResource PhoneTextNormalStyle}">
+        <Setter Property="FontSize" Value="{StaticResource PhoneFontSizeMedium}" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+    </Style>
+</ResourceDictionary>
