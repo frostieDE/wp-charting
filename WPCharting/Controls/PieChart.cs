@@ -221,15 +221,15 @@ namespace WPCharting.Controls
             {
                 ((INotifyPropertyChanged)this.ItemsSource).PropertyChanged += new PropertyChangedEventHandler(PieChart_PropertyChanged);
             }
+
+            // Apply changes to the control
+            this.OnApplyTemplate();
         }
 
         private void PieChart_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             // Reload all items
             this.LoadItems(false);
-
-            // Apply changes to the control
-            this.OnApplyTemplate();
         }
         #endregion
     }
