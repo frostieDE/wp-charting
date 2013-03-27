@@ -17,6 +17,14 @@ namespace WPCharting.Controls
         private IEnumerable<ChartItem> _items;
         private double _sumOfValues = 0;
         private AccentColors _colors = new AccentColors();
+
+        protected double SumOfValues
+        {
+            get
+            {
+                return this._sumOfValues;
+            }
+        }
         #endregion
 
         #region Dependency Properties
@@ -99,7 +107,7 @@ namespace WPCharting.Controls
             Grid grid = base.GetTemplateChild("PART_Grid") as Grid;
             ItemsControl panel = base.GetTemplateChild("PART_Legend") as ItemsControl;
 
-            if (grid != null && panel != null && this.ItemsSource != null)
+            if (grid != null && panel != null && this._items != null && this.SumOfValues > 0)
             {
                 double width = this.Width;
                 double lastAngle = 0;

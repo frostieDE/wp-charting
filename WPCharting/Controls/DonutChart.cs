@@ -10,11 +10,14 @@ namespace WPCharting.Controls
         {
             base.OnApplyTemplate();
 
-            Grid grid = base.GetTemplateChild("PART_Grid") as Grid;
-
-            if (grid != null)
+            if (this.SumOfValues > 0)
             {
-                grid.Children.Add(new Ellipse { Width = this.Width * 0.4, Height = this.Width * 0.4, Fill = new SolidColorBrush(Colors.Black) });
+                Grid grid = base.GetTemplateChild("PART_Grid") as Grid;
+
+                if (grid != null)
+                {
+                    grid.Children.Add(new Ellipse { Width = this.Width * 0.4, Height = this.Width * 0.4, Fill = new SolidColorBrush(Colors.Black) });
+                }
             }
         }
     }
