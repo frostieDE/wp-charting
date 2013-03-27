@@ -14,7 +14,7 @@ namespace WPCharting.Controls
     {
         #region Properties
         private IEnumerable<ChartItem> _items;
-        private int _sumOfValues = 0;
+        private double _sumOfValues = 0;
         private AccentColors _colors = new AccentColors();
         #endregion
 
@@ -186,13 +186,13 @@ namespace WPCharting.Controls
         private void LoadItems()
         {
             List<ChartItem> items = new List<ChartItem>();
-            int sum = 0;
+            double sum = 0;
 
             foreach (object item in this.ItemsSource)
             {
                 ChartItem _item = new ChartItem();
                 _item.Caption = PieChart.GetValueHelper<string>(item, this.CaptionMemberPath, "");
-                _item.Value = PieChart.GetValueHelper<int>(item, this.ValueMemberPath, 0);
+                _item.Value = PieChart.GetValueHelper<double>(item, this.ValueMemberPath, 0);
 
                 sum += _item.Value;
 

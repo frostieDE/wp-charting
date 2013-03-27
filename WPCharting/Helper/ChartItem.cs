@@ -10,7 +10,7 @@ namespace WPCharting.Helper
             set;
         }
 
-        public int Value
+        public double Value
         {
             get;
             set;
