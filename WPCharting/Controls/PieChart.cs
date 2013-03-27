@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
@@ -185,6 +186,11 @@ namespace WPCharting.Controls
         #region LoadItems
         private void LoadItems()
         {
+            this.LoadItems(true);
+        }
+
+        private void LoadItems(bool subscribe)
+        {
             List<ChartItem> items = new List<ChartItem>();
             double sum = 0;
 
@@ -206,6 +212,24 @@ namespace WPCharting.Controls
 
             this._items = items;
             this._sumOfValues = sum;
+
+            /* Check if ItemsSource implements INotifyPropertyChanged-Interface
+             * so we can hook the PropertyChanged event in order to update
+             * the control
+             */
+            if (subscribe && this.ItemsSource is INotifyPropertyChanged)
+            {
+                ((INotifyPropertyChanged)this.ItemsSource).PropertyChanged += new PropertyChangedEventHandler(PieChart_PropertyChanged);
+            }
+        }
+
+        private void PieChart_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            // Reload all items
+            this.LoadItems(false);
+
+            // Apply changes to the control
+            this.OnApplyTemplate();
         }
         #endregion
     }
