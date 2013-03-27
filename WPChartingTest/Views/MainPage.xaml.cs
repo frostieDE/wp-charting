@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using Microsoft.Phone.Controls;
+using WPChartingTest.Models;
 
 namespace WPChartingTest.Views
 {
@@ -16,6 +17,11 @@ namespace WPChartingTest.Views
         {
             chart1.LegendVisible = (chart1.LegendVisible == Visibility.Collapsed ? Visibility.Visible : Visibility.Collapsed);
             chart2.LegendVisible = (chart2.LegendVisible == Visibility.Collapsed ? Visibility.Visible : Visibility.Collapsed);
+        }
+
+        private void AddItem_Click(object sender, RoutedEventArgs e)
+        {
+            App.ViewModel.Items.Add(new Item { Caption = "Test " + (App.ViewModel.Items.Count + 1).ToString(), Value = 42 });
         }
     }
 }

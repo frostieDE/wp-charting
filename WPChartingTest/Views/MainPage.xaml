@@ -41,6 +41,7 @@
                         <charts:PieChart x:Name="chart1" Width="400" ItemsSource="{Binding Items}" LegendItemTemplate="{StaticResource LegendItemTemplate}"></charts:PieChart>
                         
                         <Button Click="ToggleLegend_Click">toggle legend</Button>
+                        <Button Click="AddItem_Click">add item</Button>
                     </StackPanel>
                 </ScrollViewer>
             </controls:PivotItem>
@@ -51,6 +52,7 @@
                         <charts:DonutChart x:Name="chart2" Width="400" ItemsSource="{Binding Items}" LegendItemTemplate="{StaticResource LegendItemTemplate}"></charts:DonutChart>
 
                         <Button Click="ToggleLegend_Click">toggle legend</Button>
+                        <Button Click="AddItem_Click">add item</Button>
                     </StackPanel>
                 </ScrollViewer>
             </controls:PivotItem>
