@@ -14,7 +14,7 @@ namespace WPChartingTest.ViewModels
         public MainViewModel()
         {
             this.Items = new ObservableCollection<Item>();
-            this.Items.Add(new Item { Caption = "Test 1", Value = 50 });
+            this.Items.Add(new Item { Caption = "Test 1", Value = 0 });
             this.Items.Add(new Item { Caption = "Test 2", Value = 60 });
         }
     }

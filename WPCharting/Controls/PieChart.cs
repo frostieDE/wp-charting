@@ -127,7 +127,10 @@ namespace WPCharting.Controls
                     double dX = Math.Sin(d) * width / 2;
                     double dY = width / 2 - Math.Cos(d) * width / 2;
 
-                    elements.Add(this.CreatePath(startX + dX, startY + dY, _angle > 180, i));
+                    if (item.Value > 0)
+                    {
+                        elements.Add(this.CreatePath(startX + dX, startY + dY, _angle > 180, i));
+                    }
 
                     item.Percent = _percent;
                     item.Color = this._colors[i % this._colors.Count];
