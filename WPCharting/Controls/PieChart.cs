@@ -169,13 +169,13 @@ namespace WPCharting.Controls
         #endregion
 
         #region GetValue
-        private static T GetValueHelper<T>(object obj, string member, T defaultValue)
+        private static object GetValueHelper(object obj, string member, object defaultValue)
         {
             PropertyInfo info = obj.GetType().GetProperty(member);
 
             if (info != null)
             {
-                return (T)info.GetValue(obj, null);
+                return info.GetValue(obj, null);
             }
 
             return defaultValue;
@@ -190,13 +190,18 @@ namespace WPCharting.Controls
 
             foreach (object item in this.ItemsSource)
             {
-                ChartItem _item = new ChartItem();
-                _item.Caption = PieChart.GetValueHelper<string>(item, this.CaptionMemberPath, "");
-                _item.Value = PieChart.GetValueHelper<double>(item, this.ValueMemberPath, 0);
+                try
+                {
+                    ChartItem _item = new ChartItem();
+                    _item.Caption = PieChart.GetValueHelper(item, this.CaptionMemberPath, "").ToString();
 
-                sum += _item.Value;
+                    var res = PieChart.GetValueHelper(item, this.ValueMemberPath, 0);
+                    _item.Value = Convert.ToDouble(res);
 
-                items.Add(_item);
+                    sum += _item.Value;
+                    items.Add(_item);
+                }
+                catch { }
             }
 
             this._items = items;
