@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
@@ -107,6 +108,16 @@ namespace WPCharting.Controls
             Grid grid = base.GetTemplateChild("PART_Grid") as Grid;
             ItemsControl panel = base.GetTemplateChild("PART_Legend") as ItemsControl;
 
+            if (this._items.Count() == 0)
+            {
+                grid.Visibility = System.Windows.Visibility.Collapsed;
+
+                grid.Children.Clear();
+                panel.ItemsSource = null;
+
+                return;
+            }
+
             if (grid != null && panel != null && this._items != null && this.SumOfValues > 0)
             {
                 double width = this.Width;
@@ -147,6 +158,7 @@ namespace WPCharting.Controls
                     grid.Children.Add(elem);
                 }
 
+                grid.Visibility = System.Windows.Visibility.Visible;
                 panel.ItemsSource = this._items;
             }
         }

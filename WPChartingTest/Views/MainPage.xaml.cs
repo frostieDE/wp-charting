@@ -23,5 +23,13 @@ namespace WPChartingTest.Views
         {
             App.ViewModel.Items.Add(new Item { Caption = "Test " + (App.ViewModel.Items.Count + 1).ToString(), Value = 42 });
         }
+
+        private void DeleteItem_Click(object sender, RoutedEventArgs e)
+        {
+            if (App.ViewModel.Items.Count > 0)
+            {
+                App.ViewModel.Items.Remove(App.ViewModel.Items[App.ViewModel.Items.Count - 1]);
+            }
+        }
     }
 }

@@ -42,6 +42,7 @@
                         
                         <Button Click="ToggleLegend_Click">toggle legend</Button>
                         <Button Click="AddItem_Click">add item</Button>
+                        <Button Click="DeleteItem_Click">delete item</Button>
                     </StackPanel>
                 </ScrollViewer>
             </controls:PivotItem>
@@ -53,6 +54,7 @@
 
                         <Button Click="ToggleLegend_Click">toggle legend</Button>
                         <Button Click="AddItem_Click">add item</Button>
+                        <Button Click="DeleteItem_Click">delete item</Button>
                     </StackPanel>
                 </ScrollViewer>
             </controls:PivotItem>
