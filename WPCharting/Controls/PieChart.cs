@@ -255,5 +255,11 @@ namespace WPCharting.Controls
             this.LoadItems(false);
         }
         #endregion
+
+        public void UpdateChart()
+        {
+            // Reload all items
+            this.LoadItems(false);
+        }
     }
 }
