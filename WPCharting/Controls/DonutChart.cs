@@ -16,7 +16,8 @@ namespace WPCharting.Controls
 
                 if (grid != null)
                 {
-                    grid.Children.Add(new Ellipse { Width = this.Width * 0.4, Height = this.Width * 0.4, Fill = new SolidColorBrush(Colors.Black) });
+                    var brush = Resources["PhoneBackgroundBrush"] as Brush;
+                    grid.Children.Add(new Ellipse { Width = this.Width * 0.4, Height = this.Width * 0.4, Fill = brush });
                 }
             }
         }
