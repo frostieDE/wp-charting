@@ -12,6 +12,8 @@ using WPCharting.Helper;
 
 namespace WPCharting.Controls
 {
+    [TemplatePart(Name = "PART_Grid", Type = typeof(Grid))]
+    [TemplatePart(Name = "PART_Legend", Type = typeof(ItemsControl))]
     public class PieChart : ContentControl
     {
         #region Properties
@@ -108,12 +110,18 @@ namespace WPCharting.Controls
             Grid grid = base.GetTemplateChild("PART_Grid") as Grid;
             ItemsControl panel = base.GetTemplateChild("PART_Legend") as ItemsControl;
 
-            if (this._items.Count() == 0)
+            if (this._items == null || this._items.Count() == 0)
             {
-                grid.Visibility = System.Windows.Visibility.Collapsed;
+                if (grid != null)
+                {
+                    grid.Visibility = System.Windows.Visibility.Collapsed;
+                    grid.Children.Clear();
+                }
 
-                grid.Children.Clear();
-                panel.ItemsSource = null;
+                if (panel != null)
+                {
+                    panel.ItemsSource = null;
+                }
 
                 return;
             }
