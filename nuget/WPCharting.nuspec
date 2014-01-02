@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>WPCharting</id>
+    <version>1.0.0</version>
+    <title>WP Charting</title>
+    <authors>Marcel Marnitz</authors>
+    <licenseUrl>https://github.com/frostieDE/wp-charting/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/frostieDE/wp-charting</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A simple charting control for Windows Phone 8.</description>
+    <releaseNotes>This is the initial release. Feel free to contribute on GitHub</releaseNotes>
+    <copyright>Copyright 2013</copyright>
+    <tags>windows phone wp8 wp chart charting donut pie control</tags>
+  </metadata>
+  
+  <files>
+	<file src="..\src\WPCharting\Bin\Release\WPCharting.*" target="lib\windowsphone8" />
+  </files>
+</package>
