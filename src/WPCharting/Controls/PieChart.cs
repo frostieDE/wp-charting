@@ -52,13 +52,13 @@ namespace WPCharting.Controls
 
         #endregion
 
-        #region LegendVisible Dependency Property
-        public static readonly DependencyProperty LegendVisibleProperty = DependencyProperty.Register("LegendVisible", typeof(Visibility), typeof(PieChart), new PropertyMetadata(Visibility.Visible));
+        #region LegendVisibility Dependency Property
+        public static readonly DependencyProperty LegendVisibilityProperty = DependencyProperty.Register("LegendVisibility", typeof(Visibility), typeof(PieChart), new PropertyMetadata(Visibility.Visible));
 
-        public Visibility LegendVisible
+        public Visibility LegendVisibility
         {
-            get { return (Visibility)base.GetValue(LegendVisibleProperty); }
-            set { base.SetValue(LegendVisibleProperty, value); }
+            get { return (Visibility)base.GetValue(LegendVisibilityProperty); }
+            set { base.SetValue(LegendVisibilityProperty, value); }
         }
 
         #endregion
