@@ -9,7 +9,7 @@
                 <ControlTemplate TargetType="local:PieChart">
                     <StackPanel>
                         <Grid x:Name="PART_Grid" VerticalAlignment="Top" />
-                        <ItemsControl Visibility="{TemplateBinding LegendVisible}" ItemTemplate="{TemplateBinding LegendItemTemplate}" x:Name="PART_Legend" />
+                        <ItemsControl Visibility="{TemplateBinding LegendVisibility}" ItemTemplate="{TemplateBinding LegendItemTemplate}" x:Name="PART_Legend" />
                     </StackPanel>
                 </ControlTemplate>
             </Setter.Value>

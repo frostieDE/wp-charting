@@ -15,8 +15,8 @@ namespace WPChartingTest.Views
 
         private void ToggleLegend_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            chart1.LegendVisible = (chart1.LegendVisible == Visibility.Collapsed ? Visibility.Visible : Visibility.Collapsed);
-            chart2.LegendVisible = (chart2.LegendVisible == Visibility.Collapsed ? Visibility.Visible : Visibility.Collapsed);
+            chart1.LegendVisibility = (chart1.LegendVisibility == Visibility.Collapsed ? Visibility.Visible : Visibility.Collapsed);
+            chart2.LegendVisibility = (chart2.LegendVisibility == Visibility.Collapsed ? Visibility.Visible : Visibility.Collapsed);
         }
 
         private void AddItem_Click(object sender, RoutedEventArgs e)
